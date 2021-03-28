@@ -6,7 +6,9 @@ int main(int amount, char* arguments[])
 	int integer = 567;
 
 	char* binary = convert_integer_binary(integer);
-	char* hexdec = convert_integer_hexdec(integer);
+	int length = character_string_length(binary);
+
+	char* hexdec = convert_binary_hexdec(binary, length);
 	char* base64 = convert_integer_base64(integer);
 	char character = convert_integer_character(integer);
 

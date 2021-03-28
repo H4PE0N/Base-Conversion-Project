@@ -14,8 +14,10 @@
 #include "../Header-Programs-Folder/hexdec-value-conversions.h"
 #include "../Header-Programs-Folder/character-string-functions.h"
 #include "../Header-Programs-Folder/integer-value-functions.h"
+#include "../Header-Programs-Folder/integer-array-functions.h"
 #include "../Header-Programs-Folder/character-value-functions.h"
 #include "../Header-Programs-Folder/character-value-conversions.h"
+#include "../Header-Programs-Folder/hexdec-value-functions.h"
 
 #define STR_SIZE 1024
 #define CHAR_NONE '\0'
