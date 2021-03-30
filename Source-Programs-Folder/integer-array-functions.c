@@ -3,8 +3,8 @@
 
 int* generate_integer_array(int length)
 {
-  int* array = malloc(sizeof(int) * length);
-  for(int index = 0; index < length; index = index + 1)
+  int* array = malloc(sizeof(int) * (length + 1));
+  for(int index = 0; index < (length + 1); index += 1)
   {
     array = allocate_array_integer(array, index,
       INT_NONE);

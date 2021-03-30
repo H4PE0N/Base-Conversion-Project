@@ -18,13 +18,15 @@ int main(int amount, char* arguments[])
 	char* base64 = convert_string_base64(string, length);
 	int bselen = character_string_length(base64);
 
+	printf("STRING\t: %s\n", string);
+	printf("BASE64\t: %s\n", base64);
+
 	char* newstr = convert_base64_string(base64, bselen);
 
 	// printf("INTEGER\t: %d\n", integer);
 	// printf("BINARY\t: %s\n", binary);
 	// printf("HEXDEC\t: %s\n", hexdec);
-	printf("STRING\t: %s\n", string);
-	printf("BASE64\t: %s\n", base64);
+
 	printf("NEWSTR\t: %s\n", newstr);
 	// printf("LETTER\t: %c\n", character);
 

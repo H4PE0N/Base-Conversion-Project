@@ -12,14 +12,15 @@ char* convert_base64_string(char* base64, int length)
     if(!character_variable_equals(character, '='))
     {
       int integer = base64_character_value(character);
-      char* binary = integer_base64_binary(integer);
+      char* binary = integer_limited_binary(integer,6);
 
       bsebin = allocate_sentence_string(bsebin, index,
         binary);
     }
   }
   int amount = character_sentence_amount(bsebin);
-  char*stream=concat_character_sentence(bsebin,amount);
+
+  char*stream=concat_character_sentence(bsebin, amount);
   int strlen = character_string_length(stream);
 
   int binlen = (strlen - (strlen % 8));

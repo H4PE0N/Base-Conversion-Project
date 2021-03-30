@@ -13,33 +13,25 @@ char* convert_integer_binary(int integer)
   return binary;
 }
 
-char* integer_limited_binary(int integer)
+char* integer_limited_binary(int integer, int limit)
 {
   char* binary = generate_character_string(STR_SIZE);
-  for(int index = 0; index < 8; index = index + 1)
+  for(int index = 0; index < limit; index = index + 1)
   {
-    change_binary_variables(binary, 8, index,&integer);
+    change_binary_variables(binary, limit, index,
+      &integer);
   }
   return binary;
 }
 
-char* character_limited_binary(char character)
+char*character_limited_binary(char character,int limit)
 {
   char* binary = generate_character_string(STR_SIZE);
   int integer = convert_character_integer(character);
-  for(int index = 0; index < 8; index = index + 1)
+  for(int index = 0; index < limit; index = index + 1)
   {
-    change_binary_variables(binary, 8, index,&integer);
-  }
-  return binary;
-}
-// CHANGE THIS FUNCTION TO A COMMON WITH ARGUMENT
-char* integer_base64_binary(int integer)
-{
-  char* binary = generate_character_string(STR_SIZE);
-  for(int index = 0; index < 6; index = index + 1)
-  {
-    change_binary_variables(binary, 6, index,&integer);
+    change_binary_variables(binary, limit, index,
+      &integer);
   }
   return binary;
 }
@@ -85,7 +77,7 @@ char** convert_string_binary(char* string, int length)
   {
     char character = string_index_character(string,
       index);
-    char* current =character_limited_binary(character);
+    char*current=character_limited_binary(character,8);
     binary = allocate_sentence_string(binary, index,
       current);
   }
@@ -99,7 +91,7 @@ char** convert_array_binary(int* array, int length)
   for(int index = 0; index < length; index = index + 1)
   {
     int integer = array_index_integer(array, index);
-    char* current = integer_limited_binary(integer);
+    char* current = integer_limited_binary(integer, 8);
     binary = allocate_sentence_string(binary, index,
       current);
   }

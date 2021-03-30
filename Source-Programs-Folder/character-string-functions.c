@@ -3,8 +3,8 @@
 
 char* generate_character_string(int length)
 {
-  char* string = malloc(sizeof(char) * length);
-  for(int index = 0; index < length; index = index + 1)
+  char* string = malloc(sizeof(char) * (length + 1));
+  for(int index = 0; index < (length + 1); index += 1)
   {
     string = allocate_string_character(string, index,
       CHAR_NONE);
@@ -37,8 +37,8 @@ int character_string_length(char* string)
 
 char**generate_character_sentence(int height,int width)
 {
-  char** sentence = malloc(sizeof(char*) * height);
-  for(int index = 0; index < height; index = index + 1)
+  char** sentence = malloc(sizeof(char*) * (height+1));
+  for(int index = 0; index < (height + 1); index += 1)
   {
     char* string = generate_character_string(width);
     sentence = allocate_sentence_string(sentence,index,
