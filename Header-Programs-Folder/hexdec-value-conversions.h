@@ -9,8 +9,4 @@ char* convert_base64_hexdec(char*, int);
 char** convert_array_hexdec(int*, int);
 char** convert_string_hexdec(char*, int);
 
-char hexdec_index_character(int);
-void change_hexdec_variables(char*, int, int, int*);
-int hexdec_values_amount(int);
-
 #endif

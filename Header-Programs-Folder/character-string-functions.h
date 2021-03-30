@@ -13,4 +13,20 @@ int character_string_length(char*);
 char* sentence_index_string(char**, int);
 char** allocate_sentence_string(char**, int, char*);
 
+char* concat_character_strings(char*, int, char*, int);
+
+char* concat_character_sentence(char**, int);
+
+char* character_string_section(char*, int, int);
+
+int character_sentence_amount(char**);
+
+int string_character_index(char*, int, char);
+
+char* append_string_characters(char*, int, char, int);
+
+char** divide_character_string(char*, int, int);
+
+char* copy_character_string(char*, int);
+
 #endif

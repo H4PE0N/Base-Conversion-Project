@@ -18,8 +18,11 @@
 #include "../Header-Programs-Folder/character-value-functions.h"
 #include "../Header-Programs-Folder/character-value-conversions.h"
 #include "../Header-Programs-Folder/hexdec-value-functions.h"
+#include "../Header-Programs-Folder/base64-value-functions.h"
+#include "../Header-Programs-Folder/array-value-conversions.h"
+#include "../Header-Programs-Folder/string-value-conversions.h"
 
-#define STR_SIZE 1024
+#define STR_SIZE 2048
 #define CHAR_NONE '\0'
 #define INT_NONE INT_MIN
 

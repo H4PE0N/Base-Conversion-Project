@@ -13,6 +13,37 @@ char* convert_integer_binary(int integer)
   return binary;
 }
 
+char* integer_limited_binary(int integer)
+{
+  char* binary = generate_character_string(STR_SIZE);
+  for(int index = 0; index < 8; index = index + 1)
+  {
+    change_binary_variables(binary, 8, index,&integer);
+  }
+  return binary;
+}
+
+char* character_limited_binary(char character)
+{
+  char* binary = generate_character_string(STR_SIZE);
+  int integer = convert_character_integer(character);
+  for(int index = 0; index < 8; index = index + 1)
+  {
+    change_binary_variables(binary, 8, index,&integer);
+  }
+  return binary;
+}
+// CHANGE THIS FUNCTION TO A COMMON WITH ARGUMENT
+char* integer_base64_binary(int integer)
+{
+  char* binary = generate_character_string(STR_SIZE);
+  for(int index = 0; index < 6; index = index + 1)
+  {
+    change_binary_variables(binary, 6, index,&integer);
+  }
+  return binary;
+}
+
 char* convert_hexdec_binary(char* hexdec, int amount)
 {
   char* binary = generate_character_string(STR_SIZE);
@@ -54,7 +85,7 @@ char** convert_string_binary(char* string, int length)
   {
     char character = string_index_character(string,
       index);
-    char* current =convert_character_binary(character);
+    char* current =character_limited_binary(character);
     binary = allocate_sentence_string(binary, index,
       current);
   }
@@ -68,7 +99,7 @@ char** convert_array_binary(int* array, int length)
   for(int index = 0; index < length; index = index + 1)
   {
     int integer = array_index_integer(array, index);
-    char* current = convert_integer_binary(integer);
+    char* current = integer_limited_binary(integer);
     binary = allocate_sentence_string(binary, index,
       current);
   }
