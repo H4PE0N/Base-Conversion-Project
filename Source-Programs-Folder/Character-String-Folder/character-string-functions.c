@@ -12,17 +12,6 @@ char* generate_character_string(int length)
   return string;
 }
 
-char* allocate_string_character(char* string,int index,
-  char character)
-{
-  *(string + index) = character; return string;
-}
-
-char string_index_character(char* string, int index)
-{
-  char character = *(string + index); return character;
-}
-
 int character_string_length(char* string)
 {
   for(int length = 0; true; length = length + 1)
@@ -45,12 +34,6 @@ char**generate_character_sentence(int height,int width)
       string);
   }
   return sentence;
-}
-
-char** allocate_sentence_string(char** sentence,
-  int index, char* string)
-{
-  *(sentence + index) = string; return sentence;
 }
 
 char* sentence_index_string(char** sentence,int index)
@@ -135,12 +118,18 @@ int string_character_index(char* string, int length,
   return INT_NONE;
 }
 
+char** allocate_sentence_string(char** sentence,
+  int index, char* string)
+{
+  *(sentence + index) = string; return sentence;
+}
+
 char** divide_character_string(char* string,int length,
   int piece)
 {
   char** sentence = generate_character_sentence(length,
-    STR_SIZE);
-  for(int index = 0; index < (length + 4); index += piece)
+    STR_SIZE); int total = length + (length % piece);
+  for(int index = 0; index < total; index += piece)
   {
     char*section=character_string_section(string,index,
       index + piece - 1);
@@ -162,4 +151,48 @@ char* copy_character_string(char* copying, int length)
       character);
   }
   return string;
+}
+
+char string_index_character(char* string, int index)
+{
+  char character = *(string + index); return character;
+}
+
+char* extract_file_information(char* filename)
+{
+  char* string = generate_character_string(STR_SIZE);
+  FILE* filedata = fopen(filename, "r");
+  if(filedata == NULL) { return NULL; } char character;
+
+  for(int index = 0; (character=fgetc(filedata)) !=EOF;
+    index = index + 1)
+  {
+    string =allocate_string_character(string, index,
+      character);
+  }
+  int length = character_string_length(string);
+  string = delete_string_character(string, length,
+    length - 1); return string;
+}
+
+char* allocate_string_character(char* string,int index,
+  char character)
+{
+  *(string + index) = character; return string;
+}
+
+char* delete_string_character(char* string, int length,
+  int start) // start: index
+{
+  for(int index = start; index < length; index += 1)
+  {
+    char token = string_index_character(string, index);
+    char second=string_index_character(string,index+1);
+    string = allocate_string_character(string, index,
+      second);
+    string = allocate_string_character(string, index+1,
+      token);
+  }
+  string = allocate_string_character(string, length,
+    CHAR_NONE); return string;
 }

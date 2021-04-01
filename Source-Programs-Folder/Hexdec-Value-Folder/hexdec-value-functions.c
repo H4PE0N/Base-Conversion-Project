@@ -3,9 +3,12 @@
 
 int hexdec_character_value(char character)
 {
-  char table[] = {'0', '1', '2', '3', '4', '5', '6',
-    '7', '8', '9', 'A', 'B', 'C', 'D', 'E', 'F'};
-  return string_character_index(table, 16, character);
+  char filename[] = "Source-Programs-Folder/Hexdec-\
+Value-Folder/hexdec-values-table.txt";
+  char* letters = extract_file_information(filename);
+  int length = character_string_length(letters);
+  int index = string_character_index(letters, length,
+    character); return index;
 }
 
 void change_hexdec_variables(char* hexdec, int amount,
@@ -23,8 +26,9 @@ void change_hexdec_variables(char* hexdec, int amount,
 
 char hexdec_index_character(int index)
 {
-  char letters[] = {'0', '1', '2', '3', '4', '5', '6',
-    '7', '8', '9', 'A', 'B', 'C', 'D', 'E', 'F'};
+  char filename[] = "Source-Programs-Folder/Hexdec-\
+Value-Folder/hexdec-values-table.txt";
+  char* letters = extract_file_information(filename);
   return string_index_character(letters, index);
 }
 

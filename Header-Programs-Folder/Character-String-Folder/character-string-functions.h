@@ -29,4 +29,8 @@ char** divide_character_string(char*, int, int);
 
 char* copy_character_string(char*, int);
 
+char* delete_string_character(char*, int, int);
+
+char* extract_file_information(char*);
+
 #endif
