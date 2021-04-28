@@ -12,7 +12,4 @@ char* integer_limited_binary(int, int);
 char* character_limited_binary(char, int);
 char* integer_base64_binary(int);
 
-int binary_values_amount(int);
-void change_binary_variables(char*, int, int, int*);
-
 #endif

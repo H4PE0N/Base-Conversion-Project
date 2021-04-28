@@ -29,7 +29,7 @@ char* convert_binary_hexdec(char* binary, int amount)
 char* convert_character_hexdec(char character)
 {
   char* hexdec = generate_character_string(STR_SIZE);
-  int integer = convert_character_integer(character);
+  int integer = (int) character;
   int amount = hexdec_values_amount(integer);
   for(int index = 0; index < amount; index = index + 1)
   {
@@ -73,5 +73,3 @@ char** convert_string_hexdec(char* string, int length)
   }
   return hexdec;
 }
-
-/*---------------------------------------------------*/

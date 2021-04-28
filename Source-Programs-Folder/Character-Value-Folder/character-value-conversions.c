@@ -13,12 +13,7 @@ char convert_binary_character(char* binary, int amount)
       integer += integer_power_operation(2, number);
     }
   }
-  return convert_integer_character(integer);
-}
-
-char convert_integer_character(int integer)
-{
-  char character = integer; return character;
+  return integer;
 }
 
 char convert_hexdec_character(char* hexdec, int amount)
@@ -31,5 +26,5 @@ char convert_hexdec_character(char* hexdec, int amount)
     int value = integer_power_operation(16, number);
     integer +=(value * hexdec_character_value(letter));
   }
-  return convert_integer_character(integer);
+  return integer;
 }

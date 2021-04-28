@@ -10,6 +10,7 @@
 #include "../Header-Programs-Folder/base-conversion-program.h"
 
 #include "../Header-Programs-Folder/Binary-Value-Folder/binary-value-conversions.h"
+#include "../Header-Programs-Folder/Binary-Value-Folder/binary-value-functions.h"
 
 #include "../Header-Programs-Folder/Base64-Value-Folder/base64-value-conversions.h"
 #include "../Header-Programs-Folder/Base64-Value-Folder/base64-value-functions.h"

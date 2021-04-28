@@ -16,11 +16,6 @@ int convert_binary_integer(char* binary, int amount)
   return integer;
 }
 
-int convert_character_integer(char character)
-{
-  int integer = character; return integer;
-}
-
 int convert_hexdec_integer(char* hexdec, int amount)
 {
   int integer = 0;

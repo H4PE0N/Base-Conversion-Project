@@ -17,17 +17,16 @@ char* values_base64_string(int* array, int length)
 char** generate_base64_binary(char** binary,int amount)
 {
   char* concat = generate_character_string(STR_SIZE);
-  concat = concat_character_sentence(binary, amount);
+  concat = concat_character_sentence(binary, amount,
+    CHAR_NONE);
   int conlen = character_string_length(concat);
 
   char** bsebin = divide_character_string(concat,
     conlen, 6);
-
   int bseamt = character_sentence_amount(bsebin);
 
   char* string=sentence_index_string(bsebin, bseamt-1);
   int length = character_string_length(string);
-
   string = append_string_characters(string, length,'0',
     6 - length); return bsebin;
 }

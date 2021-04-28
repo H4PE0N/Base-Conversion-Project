@@ -29,8 +29,7 @@ char* convert_array_string(int* array, int length)
   char* string = generate_character_string(length);
   for(int index = 0; index < length; index = index + 1)
   {
-    int integer = array_index_integer(array, index);
-    char character = convert_integer_character(integer);
+    char character = array_index_integer(array, index);
     string = allocate_string_character(string, index,
       character);
   }

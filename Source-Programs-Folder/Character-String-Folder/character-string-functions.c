@@ -56,7 +56,7 @@ char* character_string_section(char* string, int first,
   int second)
 {
   int length = (second - first + 1);
-  char* section = generate_character_string(STR_SIZE); // length
+  char* section = generate_character_string(length);
   for(int index = 0; index < length; index = index + 1)
   {
     char character = string_index_character(string,
@@ -68,30 +68,39 @@ char* character_string_section(char* string, int first,
 }
 
 char* concat_character_sentence(char** sentence,
-  int amount)
+  int amount, char seperator)
 {
   char* concat = generate_character_string(STR_SIZE);
-  for(int index = 0; index < amount; index = index + 1)
+  char* first = sentence_index_string(sentence, 0);
+  int first_len = character_string_length(first);
+  concat = copy_character_string(first, first_len,
+    concat);
+  for(int index = 1; index < amount; index = index + 1)
   {
     char* current = sentence_index_string(sentence,
       index);
-    int c_length = character_string_length(current);
-    int t_length = character_string_length(concat);
-    concat = concat_character_strings(concat, t_length,
-      current, c_length);
+    int length = character_string_length(concat);
+    concat = concat_character_strings(concat, length,
+      current, seperator);
   }
   return concat;
 }
 
 char* concat_character_strings(char* first, int start,
-  char* second, int length)
+  char* second, char seperator)
 {
+  int length = character_string_length(second);
+  if(!character_variable_equals(seperator, CHAR_NONE))
+  {
+    first = allocate_string_character(first, start,
+      seperator); start = (start + 1);
+  }
   for(int index = 0; index < length; index = index + 1)
   {
     char character = string_index_character(second,
       index);
-    first = allocate_string_character(first, start +
-      index, character);
+    first=allocate_string_character(first, start+index,
+      character);
   }
   return first;
 }
@@ -128,7 +137,7 @@ char** divide_character_string(char* string,int length,
   int piece)
 {
   char** sentence = generate_character_sentence(length,
-    STR_SIZE); int total = length + (length % piece);
+    STR_SIZE); int total = (length + (length % piece));
   for(int index = 0; index < total; index += piece)
   {
     char*section=character_string_section(string,index,
@@ -140,9 +149,9 @@ char** divide_character_string(char* string,int length,
   return sentence;
 }
 
-char* copy_character_string(char* copying, int length)
+char* copy_character_string(char* copying, int length,
+  char* string)
 {
-  char* string = generate_character_string(length);
   for(int index = 0; index < length; index = index + 1)
   {
     char character = string_index_character(copying,
@@ -163,7 +172,6 @@ char* extract_file_information(char* filename)
   char* string = generate_character_string(STR_SIZE);
   FILE* filedata = fopen(filename, "r");
   if(filedata == NULL) { return NULL; } char character;
-
   for(int index = 0; (character=fgetc(filedata)) !=EOF;
     index = index + 1)
   {
