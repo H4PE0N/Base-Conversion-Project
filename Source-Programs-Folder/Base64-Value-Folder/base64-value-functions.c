@@ -1,9 +1,13 @@
 
 #include "../common-include-header.h"
 
+char b64File[] = "../Source-Programs-Folder/Base64-\
+Value-Folder/base64-values-table.txt";
+
 char* values_base64_string(int* array, int length)
 {
   char* base64 = generate_character_string(STR_SIZE);
+
   for(int index = 0; index < length; index = index + 1)
   {
     int integer = array_index_integer(array, index);
@@ -31,11 +35,18 @@ char** generate_base64_binary(char** binary,int amount)
     6 - length); return bsebin;
 }
 
+char* append_base64_ending(char* base64, int length)
+{
+  int modint = (length % 4);
+  int blanks = (modint == 0 ? 0 : (4 - modint));
+  base64 = append_string_characters(base64, length,'=',
+    blanks);
+  return base64;
+}
+
 int base64_character_value(char character)
 {
-  char filename[] = "Source-Programs-Folder/Base64-\
-Value-Folder/base64-values-table.txt";
-  char* letters = extract_file_information(filename);
+  char* letters = extract_file_information(b64File);
   int length = character_string_length(letters);
   int index = string_character_index(letters, length,
     character); return index;
@@ -43,8 +54,6 @@ Value-Folder/base64-values-table.txt";
 
 char base64_index_character(int index)
 {
-  char filename[] = "Source-Programs-Folder/Base64-\
-Value-Folder/base64-values-table.txt";
-  char* letters = extract_file_information(filename);
+  char* letters = extract_file_information(b64File);
   return string_index_character(letters, index);
 }

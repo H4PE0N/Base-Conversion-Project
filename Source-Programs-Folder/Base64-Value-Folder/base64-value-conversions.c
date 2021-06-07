@@ -16,10 +16,7 @@ char* convert_binary_base64(char** binary, int length)
   int* array = convert_binary_array(bsebin, amount);
   char* base64 = values_base64_string(array, amount);
 
-  int modint = (amount % 4);
-  int blanks = (modint == 0 ? 0 : (4 - modint));
-  base64 = append_string_characters(base64, amount,'=',
-    blanks);
+  base64 = append_base64_ending(base64, amount);
   return base64;
 }
 

@@ -1,11 +1,12 @@
 
 #include "../common-include-header.h"
 
+char hexFile[] = "../Source-Programs-Folder/Hexdec-\
+Value-Folder/hexdec-values-table.txt";
+
 int hexdec_character_value(char character)
 {
-  char filename[] = "Source-Programs-Folder/Hexdec-\
-Value-Folder/hexdec-values-table.txt";
-  char* letters = extract_file_information(filename);
+  char* letters = extract_file_information(hexFile);
   int length = character_string_length(letters);
   int index = string_character_index(letters, length,
     character); return index;
@@ -26,9 +27,7 @@ void change_hexdec_variables(char* hexdec, int amount,
 
 char hexdec_index_character(int index)
 {
-  char filename[] = "Source-Programs-Folder/Hexdec-\
-Value-Folder/hexdec-values-table.txt";
-  char* letters = extract_file_information(filename);
+  char* letters = extract_file_information(hexFile);
   return string_index_character(letters, index);
 }
 

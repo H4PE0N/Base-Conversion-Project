@@ -17,3 +17,8 @@ int integer_power_operation(int base, int exponent)
   for(int index = 0; index < exponent; index += 1)
   { product = (product * base); } return product;
 }
+
+int integer_variable_equals(int first, int second)
+{
+  int boolean = (first == second); return boolean;
+}

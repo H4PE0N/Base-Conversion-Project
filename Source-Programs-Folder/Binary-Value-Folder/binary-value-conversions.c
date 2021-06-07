@@ -77,7 +77,7 @@ char** convert_array_binary(int* array, int length)
   }
   return binary;
 }
-
+// CHANGE: SPLIT UP IN TWO FUNCTIONS
 char** convert_hexdec_binary(char** hexdec, int amount)
 {
   char** binary = generate_character_sentence(amount,
@@ -93,7 +93,7 @@ char** convert_hexdec_binary(char** hexdec, int amount)
   }
   return binary;
 }
-
+// CHANGE: SPLIT UP IN TWO FUNCTIONS
 char** convert_base64_binary(char* base64, int length)
 {
   char** binary = extract_base64_binary(base64, length);

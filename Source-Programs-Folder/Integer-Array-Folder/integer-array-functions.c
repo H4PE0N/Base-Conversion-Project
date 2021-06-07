@@ -22,3 +22,14 @@ int array_index_integer(int* array, int index)
 {
   int integer = *(array + index); return integer;
 }
+
+int integer_array_length(int* array)
+{
+  for(int length = 0; true; length = length + 1)
+  {
+    int integer = array_index_integer(array, length);
+    if(integer_variable_equals(integer, INT_NONE))
+      return length;
+  }
+  return INT_NONE;
+}

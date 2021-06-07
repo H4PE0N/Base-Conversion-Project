@@ -39,9 +39,11 @@ char* convert_character_hexdec(char character)
   return hexdec;
 }
 
-char* convert_base64_hexdec(char* base64, int length)
+char** convert_base64_hexdec(char* base64, int length)
 {
-  char* hexdec = generate_character_string(STR_SIZE);
+  int* array = convert_base64_array(base64,length);
+  int amount = integer_array_length(array);
+  char** hexdec = convert_array_hexdec(array, amount);
   return hexdec;
 }
 
