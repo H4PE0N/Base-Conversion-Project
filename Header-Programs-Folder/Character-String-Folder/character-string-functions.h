@@ -1,6 +1,6 @@
 
-#ifndef CHARACTER_STRING_FUNCTIONS_H
-#define CHARACTER_STRING_FUNCTIONS_H
+#ifndef CHARACTER_STRING_FUNCTIONS
+#define CHARACTER_STRING_FUNCTIONS
 
 char* generate_character_string(int);
 char**generate_character_sentence(int, int);

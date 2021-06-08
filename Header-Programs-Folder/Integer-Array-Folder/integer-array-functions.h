@@ -1,6 +1,6 @@
 
-#ifndef INTEGER_ARRAY_FUNCTIONS_H
-#define INTEGER_ARRAY_FUNCTIONS_H
+#ifndef INTEGER_ARRAY_FUNCTIONS
+#define INTEGER_ARRAY_FUNCTIONS
 
 int array_index_integer(int*, int);
 int* allocate_array_integer(int*, int, int);

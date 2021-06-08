@@ -1,6 +1,6 @@
 
-#ifndef STRING_VALUE_CONVERSION_H
-#define STRING_VALUE_CONVERSION_H
+#ifndef STRING_VALUE_CONVERSION
+#define STRING_VALUE_CONVERSION
 
 char* convert_base64_string(char*, int);
 char* convert_binary_string(char**, int);

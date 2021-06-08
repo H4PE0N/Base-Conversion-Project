@@ -1,6 +1,6 @@
 
-#ifndef HEXDEC_VALUE_CONVERSIONS_H
-#define HEXDEC_VALUE_CONVERSIONS_H
+#ifndef HEXDEC_VALUE_CONVERSIONS
+#define HEXDEC_VALUE_CONVERSIONS
 
 char* convert_integer_hexdec(int);
 char* convert_binary_hexdec(char*, int);

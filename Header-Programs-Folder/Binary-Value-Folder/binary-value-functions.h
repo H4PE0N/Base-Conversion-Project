@@ -1,6 +1,6 @@
 
-#ifndef BINARY_VALUE_FUNCTIONS_H
-#define BINARY_VALUE_FUNCTIONS_H
+#ifndef BINARY_VALUE_FUNCTIONS
+#define BINARY_VALUE_FUNCTIONS
 
 int binary_values_amount(int);
 void change_binary_variables(char*, int, int, int*);

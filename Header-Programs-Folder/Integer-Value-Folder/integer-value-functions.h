@@ -1,6 +1,6 @@
 
-#ifndef INTEGER_VALUE_FUNCTIONS_H
-#define INTEGER_VALUE_FUNCTIONS_H
+#ifndef INTEGER_VALUE_FUNCTIONS
+#define INTEGER_VALUE_FUNCTIONS
 
 int integer_variable_greater(int, int);
 int integer_variable_smaller(int, int);

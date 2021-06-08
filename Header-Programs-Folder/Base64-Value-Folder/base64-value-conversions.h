@@ -1,6 +1,6 @@
 
-#ifndef BASE64_VALUE_CONVERSIONS_H
-#define BASE64_VALUE_CONVERSIONS_H
+#ifndef BASE64_VALUE_CONVERSIONS
+#define BASE64_VALUE_CONVERSIONS
 
 char* convert_hexdec_base64(char**, int);
 char* convert_binary_base64(char**, int);

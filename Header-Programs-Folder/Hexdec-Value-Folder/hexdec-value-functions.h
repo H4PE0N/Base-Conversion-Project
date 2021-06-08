@@ -1,6 +1,6 @@
 
-#ifndef HEXDEC_VALUE_FUNCTIONS_H
-#define HEXDEC_VALUE_FUNCTIONS_H
+#ifndef HEXDEC_VALUE_FUNCTIONS
+#define HEXDEC_VALUE_FUNCTIONS
 
 extern char hexFile[];
 
