@@ -24,7 +24,7 @@ int binary_values_amount(int integer)
   }
   return INT_NONE;
 }
-// DEN HÄR SKA ÄNDRAS OCH BLI KORTARE
+// THIS FUNCTION LOOKS BAD
 char** extract_base64_binary(char* base64, int length)
 {
   char** binary = generate_character_sentence(length,

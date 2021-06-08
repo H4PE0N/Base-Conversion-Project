@@ -66,7 +66,7 @@ char* character_string_section(char* string, int first,
   }
   return section;
 }
-
+// THIS FUNCTION LOOKS BAD
 char* concat_character_sentence(char** sentence,
   int amount, char seperator)
 {
@@ -85,7 +85,7 @@ char* concat_character_sentence(char** sentence,
   }
   return concat;
 }
-
+// THIS FUNCTION LOOKS BAD
 char* concat_character_strings(char* first, int start,
   char* second, char seperator)
 {
@@ -166,7 +166,7 @@ char string_index_character(char* string, int index)
 {
   char character = *(string + index); return character;
 }
-
+// THIS FUNCTION LOOKS BAD
 char* extract_file_information(char* filename)
 {
   char* string = generate_character_string(STR_SIZE);
@@ -188,7 +188,7 @@ char* allocate_string_character(char* string,int index,
 {
   *(string + index) = character; return string;
 }
-
+// THIS FUNCTION LOOKS BAD
 char* delete_string_character(char* string, int length,
   int start) // start: index
 {

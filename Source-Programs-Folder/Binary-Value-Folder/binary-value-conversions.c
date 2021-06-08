@@ -36,15 +36,14 @@ char*character_limited_binary(char character,int limit)
   return binary;
 }
 
-char* convert_character_binary(char character)
+char* convert_character_binary(int character)
 {
   char* binary = generate_character_string(STR_SIZE);
-  int integer = (int) character;
-  int amount = binary_values_amount(integer);
+  int amount = binary_values_amount(character);
   for(int index = 0; index < amount; index = index + 1)
   {
     change_binary_variables(binary, amount, index,
-      &integer);
+      &character);
   }
   return binary;
 }

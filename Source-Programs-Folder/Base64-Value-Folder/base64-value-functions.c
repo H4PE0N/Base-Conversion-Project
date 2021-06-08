@@ -17,7 +17,7 @@ char* values_base64_string(int* array, int length)
   }
   return base64;
 }
-
+// THIS FUNCTION LOOKS BAD
 char** generate_base64_binary(char** binary,int amount)
 {
   char* concat = generate_character_string(STR_SIZE);
@@ -34,7 +34,7 @@ char** generate_base64_binary(char** binary,int amount)
   string = append_string_characters(string, length,'0',
     6 - length); return bsebin;
 }
-
+// THIS FUNCTION LOOKS BAD
 char* append_base64_ending(char* base64, int length)
 {
   int modint = (length % 4);

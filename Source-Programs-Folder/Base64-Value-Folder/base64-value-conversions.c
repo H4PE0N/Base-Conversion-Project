@@ -3,7 +3,7 @@
 
 char* convert_hexdec_base64(char** hexdec, int amount)
 {
-  char** binary = convert_hexdec_binary(hexdec, amount);
+  char** binary = convert_hexdec_binary(hexdec,amount);
   char* base64 = convert_binary_base64(binary, amount);
   return base64;
 }
